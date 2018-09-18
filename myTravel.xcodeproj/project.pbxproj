@@ -15,6 +15,7 @@
 		3ACC723B215185D400A9BB24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ACC7239215185D400A9BB24 /* LaunchScreen.storyboard */; };
 		3ACC7246215185D500A9BB24 /* myTravelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC7245215185D500A9BB24 /* myTravelTests.swift */; };
 		3ACC7251215185D500A9BB24 /* myTravelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC7250215185D500A9BB24 /* myTravelUITests.swift */; };
+		620453BC2151A494006EFA4C /* MyTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620453BB2151A494006EFA4C /* MyTravelViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3ACC724C215185D500A9BB24 /* myTravelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myTravelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ACC7250215185D500A9BB24 /* myTravelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myTravelUITests.swift; sourceTree = "<group>"; };
 		3ACC7252215185D500A9BB24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		620453BB2151A494006EFA4C /* MyTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTravelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				3ACC722D215185CD00A9BB24 /* AppDelegate.swift */,
 				3ACC722F215185CD00A9BB24 /* MainVC.swift */,
 				3ACC7231215185CD00A9BB24 /* Main.storyboard */,
+				620453BB2151A494006EFA4C /* MyTravelViewController.swift */,
 				3ACC7237215185D400A9BB24 /* Assets.xcassets */,
 				3ACC7239215185D400A9BB24 /* LaunchScreen.storyboard */,
 				3ACC723C215185D400A9BB24 /* Info.plist */,
@@ -261,6 +264,7 @@
 			files = (
 				3ACC7236215185CD00A9BB24 /* myTravel.xcdatamodeld in Sources */,
 				3ACC7230215185CD00A9BB24 /* MainVC.swift in Sources */,
+				620453BC2151A494006EFA4C /* MyTravelViewController.swift in Sources */,
 				3ACC722E215185CD00A9BB24 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
