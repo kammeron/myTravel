@@ -15,6 +15,7 @@
 		3ACC723B215185D400A9BB24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ACC7239215185D400A9BB24 /* LaunchScreen.storyboard */; };
 		3ACC7246215185D500A9BB24 /* myTravelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC7245215185D500A9BB24 /* myTravelTests.swift */; };
 		3ACC7251215185D500A9BB24 /* myTravelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC7250215185D500A9BB24 /* myTravelUITests.swift */; };
+		3EC555042151AD5400E6D2D8 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC555032151AD5400E6D2D8 /* MapVC.swift */; };
 		620453BC2151A494006EFA4C /* MyTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620453BB2151A494006EFA4C /* MyTravelViewController.swift */; };
 		620453BE2151B2C3006EFA4C /* TravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620453BD2151B2C3006EFA4C /* TravelCell.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		3ACC724C215185D500A9BB24 /* myTravelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myTravelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ACC7250215185D500A9BB24 /* myTravelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myTravelUITests.swift; sourceTree = "<group>"; };
 		3ACC7252215185D500A9BB24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EC555032151AD5400E6D2D8 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		620453BB2151A494006EFA4C /* MyTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTravelViewController.swift; sourceTree = "<group>"; };
 		620453BD2151B2C3006EFA4C /* TravelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -265,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EC555042151AD5400E6D2D8 /* MapVC.swift in Sources */,
 				3ACC7236215185CD00A9BB24 /* myTravel.xcdatamodeld in Sources */,
 				620453BE2151B2C3006EFA4C /* TravelCell.swift in Sources */,
 				3ACC7230215185CD00A9BB24 /* MainVC.swift in Sources */,
