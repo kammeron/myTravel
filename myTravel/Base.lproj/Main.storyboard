@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zlw-lN-uRP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zlw-lN-uRP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -168,6 +167,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="OUf-tX-ijm" id="qKT-TR-CsA"/>
+                        <segue destination="Nfc-Jj-xIu" kind="show" id="96E-wK-98T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7e-ZY-38F" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -353,6 +353,107 @@
             </objects>
             <point key="canvasLocation" x="1671" y="-1059"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="ryW-cX-Jf6">
+            <objects>
+                <tableViewController id="Nfc-Jj-xIu" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="oTn-CP-btD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="vFH-G8-4m9">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vFH-G8-4m9" id="CdF-Ds-yoW">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Nfc-Jj-xIu" id="oYb-fv-T56"/>
+                            <outlet property="delegate" destination="Nfc-Jj-xIu" id="sOT-ge-odQ"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="RWr-iP-9yl" kind="presentation" id="44C-EZ-4ae"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oLR-eK-aR3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3614" y="-1764"/>
+        </scene>
+        <!--Route Detail View Controller-->
+        <scene sceneID="A49-eF-hLv">
+            <objects>
+                <viewController id="RWr-iP-9yl" customClass="RouteDetailViewController" customModule="myTravel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="icP-9i-Tsy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZKe-JK-rf7">
+                                <rect key="frame" x="0.0" y="20" width="375" height="517"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0w-qd-naE">
+                                <rect key="frame" x="10" y="587" width="355" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9Xl-HY-1AG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enR-Um-ctu">
+                                <rect key="frame" x="10" y="547" width="355" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="qnC-8H-3nF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvH-lx-hJp">
+                                <rect key="frame" x="10" y="625" width="355" height="30"/>
+                                <color key="backgroundColor" red="0.75338969310000004" green="0.83788595300000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="12v-jh-qMO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="18"/>
+                                <state key="normal" title="Go Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBackBtnPressed:" destination="RWr-iP-9yl" eventType="touchUpInside" id="U3t-AF-yUn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="enR-Um-ctu" firstAttribute="leading" secondItem="DhV-Gi-c3v" secondAttribute="leading" constant="10" id="4ln-Ac-3qa"/>
+                            <constraint firstItem="JvH-lx-hJp" firstAttribute="leading" secondItem="DhV-Gi-c3v" secondAttribute="leading" constant="10" id="CTf-y4-utd"/>
+                            <constraint firstItem="ZKe-JK-rf7" firstAttribute="leading" secondItem="DhV-Gi-c3v" secondAttribute="leading" id="Gds-bX-AYM"/>
+                            <constraint firstItem="DhV-Gi-c3v" firstAttribute="trailing" secondItem="u0w-qd-naE" secondAttribute="trailing" constant="10" id="ItM-oD-aAC"/>
+                            <constraint firstItem="ZKe-JK-rf7" firstAttribute="top" secondItem="DhV-Gi-c3v" secondAttribute="top" id="Iti-Yz-Wxd"/>
+                            <constraint firstItem="u0w-qd-naE" firstAttribute="top" secondItem="enR-Um-ctu" secondAttribute="bottom" constant="10" id="MGN-ub-PAv"/>
+                            <constraint firstItem="DhV-Gi-c3v" firstAttribute="trailing" secondItem="enR-Um-ctu" secondAttribute="trailing" constant="10" id="Scv-c9-8eG"/>
+                            <constraint firstItem="DhV-Gi-c3v" firstAttribute="trailing" secondItem="ZKe-JK-rf7" secondAttribute="trailing" id="X47-6L-rZw"/>
+                            <constraint firstItem="u0w-qd-naE" firstAttribute="leading" secondItem="DhV-Gi-c3v" secondAttribute="leading" constant="10" id="b10-6v-3wk"/>
+                            <constraint firstItem="enR-Um-ctu" firstAttribute="top" secondItem="ZKe-JK-rf7" secondAttribute="bottom" constant="10" id="nhH-QP-sK4"/>
+                            <constraint firstItem="JvH-lx-hJp" firstAttribute="top" secondItem="u0w-qd-naE" secondAttribute="bottom" constant="10" id="reV-v2-FrQ"/>
+                            <constraint firstItem="DhV-Gi-c3v" firstAttribute="trailing" secondItem="JvH-lx-hJp" secondAttribute="trailing" constant="10" id="viu-py-Ffc"/>
+                            <constraint firstItem="DhV-Gi-c3v" firstAttribute="bottom" secondItem="JvH-lx-hJp" secondAttribute="bottom" constant="10" id="yUH-Ox-9JS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DhV-Gi-c3v"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="ZKe-JK-rf7" id="Mp3-a9-Gw0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9dI-y9-Pqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4553" y="-1764"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="sph-Bn-vAJ">
             <objects>
@@ -369,7 +470,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l0m-pm-01p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3613.5999999999999" y="-1059.2203898050975"/>
+            <point key="canvasLocation" x="3614" y="-1059"/>
         </scene>
     </scenes>
 </document>
