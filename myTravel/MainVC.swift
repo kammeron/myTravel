@@ -7,24 +7,50 @@
 //
 
 import UIKit
+import CoreData
 
-class MainVC: UIViewController {
+class MainVC: UIViewController{
     
     let key = "AIzaSyBwiQRbzK3aLVLy34fjHKoEaJxkUhpdvv8"
     let thisLatitude = "-33.8670522"
     let thisLongitude = "151.1957362"
     let thisRadius = "500"
     
+    @IBOutlet weak var tableView: UITableView!
+    let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+    let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var tableData = [MyTravel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getPlaces()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight=150.0
+//        getPlaces()
         // Do any additional setup after loading the view, typically from a nib.
+        fetchAll()
+        print(tableData)
+    }
+    
+    func fetchAll(){
+        let request:NSFetchRequest = MyTravel.fetchRequest()
+        do {
+            let result = try managedObjectContext.fetch(request)
+            tableData = result as! [MyTravel]
+        } catch {
+            print("\(error)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nav = segue.destination as! UINavigationController
+        let dest = nav.topViewController as! MyTravelViewController
+        dest.delegate = self
     }
     
     func getPlaces() {
@@ -46,5 +72,40 @@ class MainVC: UIViewController {
         task.resume()
     }
 
+}
+
+extension MainVC: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(tableData.count)
+        return tableData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyTravelCell", for: indexPath) as! TravelCell
+        print(tableData[indexPath.row].name)
+        cell.travelNameLabel.text = tableData[indexPath.row].name
+        cell.destinationLabel.text = tableData[indexPath.row].destination
+        cell.startLabel.text = tableData[indexPath.row].startDate
+        cell.endLabel.text = tableData[indexPath.row].endDate
+        cell.descriptionLabel.text = tableData[indexPath.row].details
+        return cell
+    }
+    
+    
+}
+
+extension MainVC: MyTravelDelegate{
+    func addMyTravel(_ name: String, _ destination: String, _ startOn: String, _ endOn: String, _ description: String) {
+        let myTravel = NSEntityDescription.insertNewObject(forEntityName: "MyTravel", into: managedObjectContext) as! MyTravel
+        myTravel.name = name
+        myTravel.destination = destination
+        myTravel.startDate = startOn
+        myTravel.endDate = endOn
+        myTravel.details = description
+        tableData.append(myTravel)
+        appDelegate.saveContext()
+        tableView.reloadData()
+        dismiss(animated: true, completion: nil)
+    }
 }
 
