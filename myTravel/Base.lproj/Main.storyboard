@@ -13,7 +13,7 @@
         <!--MapView-->
         <scene sceneID="6zF-m2-A40">
             <objects>
-                <viewController id="5eP-hp-ylb" sceneMemberID="viewController">
+                <viewController id="5eP-hp-ylb" customClass="MapVC" customModule="myTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cmk-kk-xHk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,6 +32,9 @@
                         <viewLayoutGuide key="safeArea" id="M1O-Db-cC7"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="MapView" id="pCp-Vm-D6X"/>
+                    <connections>
+                        <outlet property="mapView" destination="hgE-zV-oQf" id="O8c-Wu-dH8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EOl-es-wjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
