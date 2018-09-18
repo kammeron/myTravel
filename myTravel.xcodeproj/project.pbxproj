@@ -17,6 +17,7 @@
 		3ACC7251215185D500A9BB24 /* myTravelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC7250215185D500A9BB24 /* myTravelUITests.swift */; };
 		3EC555042151AD5400E6D2D8 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC555032151AD5400E6D2D8 /* MapVC.swift */; };
 		620453BC2151A494006EFA4C /* MyTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620453BB2151A494006EFA4C /* MyTravelViewController.swift */; };
+		B48EF9532151C11B00E79466 /* TripDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48EF9522151C11B00E79466 /* TripDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		3ACC7252215185D500A9BB24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EC555032151AD5400E6D2D8 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		620453BB2151A494006EFA4C /* MyTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTravelViewController.swift; sourceTree = "<group>"; };
+		B48EF9522151C11B00E79466 /* TripDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				3ACC722D215185CD00A9BB24 /* AppDelegate.swift */,
 				3ACC722F215185CD00A9BB24 /* MainVC.swift */,
 				3ACC7231215185CD00A9BB24 /* Main.storyboard */,
+				B48EF9522151C11B00E79466 /* TripDetailViewController.swift */,
 				3EC555032151AD5400E6D2D8 /* MapVC.swift */,
 				620453BB2151A494006EFA4C /* MyTravelViewController.swift */,
 				3ACC7237215185D400A9BB24 /* Assets.xcassets */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B48EF9532151C11B00E79466 /* TripDetailViewController.swift in Sources */,
 				3EC555042151AD5400E6D2D8 /* MapVC.swift in Sources */,
 				3ACC7236215185CD00A9BB24 /* myTravel.xcdatamodeld in Sources */,
 				3ACC7230215185CD00A9BB24 /* MainVC.swift in Sources */,
