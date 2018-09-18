@@ -76,13 +76,11 @@ class MainVC: UIViewController{
 
 extension MainVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(tableData.count)
         return tableData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyTravelCell", for: indexPath) as! TravelCell
-        print(tableData[indexPath.row].name)
         cell.travelNameLabel.text = tableData[indexPath.row].name
         cell.destinationLabel.text = tableData[indexPath.row].destination
         cell.startLabel.text = tableData[indexPath.row].startDate
