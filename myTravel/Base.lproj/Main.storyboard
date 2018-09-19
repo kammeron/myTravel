@@ -76,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EOl-es-wjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1576.8" y="-262.21889055472263"/>
+            <point key="canvasLocation" x="1670" y="-331"/>
         </scene>
         <!--MainVC-->
         <scene sceneID="plr-jh-41H">
@@ -202,171 +202,19 @@
                     <navigationItem key="navigationItem" id="1xg-y8-Q3a">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BTy-bi-h4t">
                             <connections>
-                                <segue destination="s2c-ee-oPs" kind="presentation" identifier="AddTripSegue" id="PfW-TC-Qyw"/>
+                                <segue destination="QEL-Bz-Zo3" kind="presentation" identifier="AddTripSegue" id="jNa-9Q-aui"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="OUf-tX-ijm" id="qKT-TR-CsA"/>
                         <segue destination="Nfc-Jj-xIu" kind="show" identifier="TripDetailSegue" id="96E-wK-98T"/>
+                        <segue destination="QEL-Bz-Zo3" kind="presentation" identifier="EditTripSegue" id="ryh-Z4-yhM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7e-ZY-38F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2584.8000000000002" y="-1059.2203898050975"/>
-        </scene>
-        <!--My Travel View Controller-->
-        <scene sceneID="j8L-oC-znx">
-            <objects>
-                <tableViewController id="Ndq-uF-qet" customClass="MyTravelViewController" customModule="myTravel" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qDy-IX-IjZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.40781898537881422" green="0.62057597802635445" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="s1i-yF-jkU">
-                            <rect key="frame" x="0.0" y="262" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.4078189854" green="0.62057597799999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </view>
-                        <sections>
-                            <tableViewSection id="vYM-lV-CGk">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Bkq-Tr-oaA">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bkq-Tr-oaA" id="iHm-Js-QLE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Trip Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Owk-K0-ZCE">
-                                                    <rect key="frame" x="16" y="5" width="343" height="33"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.4078189854" green="0.62057597799999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ckM-0U-g9N">
-                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ckM-0U-g9N" id="xy1-V8-oE3">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Destination*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LIY-Mz-kkZ">
-                                                    <rect key="frame" x="16" y="6" width="343" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.4078189854" green="0.62057597799999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="65" id="Jhb-xb-rmA">
-                                        <rect key="frame" x="0.0" y="88" width="375" height="65"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jhb-xb-rmA" id="bIZ-8R-XCd">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM/DD/YYYY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xer-eI-eTy">
-                                                    <rect key="frame" x="82" y="17" width="277" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ha-W5-h5t">
-                                                    <rect key="frame" x="16" y="17" width="50" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="10"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.4078189854" green="0.62057597799999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="65" id="l5G-4a-dTp">
-                                        <rect key="frame" x="0.0" y="153" width="375" height="65"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l5G-4a-dTp" id="lZA-fW-Iqz">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM/DD/YYYY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i0T-Kd-Twx">
-                                                    <rect key="frame" x="83" y="17" width="276" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyF-cN-cQz">
-                                                    <rect key="frame" x="16" y="18" width="44" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="10"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.4078189854" green="0.62057597799999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="O2O-Bx-dnd">
-                                        <rect key="frame" x="0.0" y="218" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O2O-Bx-dnd" id="dsV-Jj-iMI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ojb-Rr-1MY">
-                                                    <rect key="frame" x="16" y="6" width="343" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.4078189854" green="0.62057597799999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="Ndq-uF-qet" id="PqJ-IU-0jV"/>
-                            <outlet property="delegate" destination="Ndq-uF-qet" id="BBi-Nc-tKl"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="8Yk-gO-1Pi">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="u4C-9a-Jcw">
-                            <connections>
-                                <action selector="cancelPressed:" destination="Ndq-uF-qet" id="OpC-Fy-RVf"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="sWd-C3-XXr">
-                            <connections>
-                                <action selector="savePressed:" destination="Ndq-uF-qet" id="M7v-gi-yS9"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="descriptionField" destination="ojb-Rr-1MY" id="gZW-u2-tob"/>
-                        <outlet property="destinationTextField" destination="LIY-Mz-kkZ" id="96d-Lw-u6H"/>
-                        <outlet property="endDateField" destination="i0T-Kd-Twx" id="Ee7-Yw-wPc"/>
-                        <outlet property="nameTextField" destination="Owk-K0-ZCE" id="sBf-kp-MT8"/>
-                        <outlet property="startDateField" destination="Xer-eI-eTy" id="sdX-MR-5bt"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ePY-v5-K07" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4552.8000000000002" y="-1059.2203898050975"/>
+            <point key="canvasLocation" x="2606" y="-1059"/>
         </scene>
         <!--TabVC-->
         <scene sceneID="F30-L4-5Iy">
@@ -384,7 +232,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jrw-jx-6Pa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="650" y="-262"/>
+            <point key="canvasLocation" x="767" y="-331"/>
         </scene>
         <!--Trips-->
         <scene sceneID="hdI-Wk-4Xw">
@@ -496,7 +344,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDJ-cz-axe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3613.5999999999999" y="-2497.6011994003002"/>
+            <point key="canvasLocation" x="4553" y="-2521"/>
         </scene>
         <!--Single Trip Table View Controller-->
         <scene sceneID="ryW-cX-Jf6">
@@ -649,21 +497,133 @@
             </objects>
             <point key="canvasLocation" x="4553" y="-1764"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="sph-Bn-vAJ">
+        <!--My Travel View Controller-->
+        <scene sceneID="2Fs-ml-C82">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s2c-ee-oPs" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="d9f-Sp-SgL">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                <viewController id="QEL-Bz-Zo3" customClass="MyTravelViewController" customModule="myTravel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="as5-yy-GHw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Trip Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w6p-1G-b9N">
+                                <rect key="frame" x="16" y="60" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="UCc-AB-J5Z"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Destination" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mSB-QP-8Fo">
+                                <rect key="frame" x="16" y="120" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="zow-yT-Sji"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0u1-29-Iav">
+                                <rect key="frame" x="16" y="180" width="166.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="xDQ-MN-gM9"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="End Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TuB-Zm-HLQ">
+                                <rect key="frame" x="192.5" y="180" width="166.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="P4y-NL-coV"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2P-cU-LNN">
+                                <rect key="frame" x="16" y="315" width="343" height="48"/>
+                                <color key="backgroundColor" red="0.25699148480617884" green="0.78616803868069574" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="ih8-8v-hmg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="23"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addPressed:" destination="QEL-Bz-Zo3" eventType="touchUpInside" id="kwQ-VM-MAq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ap-Ld-8we">
+                                <rect key="frame" x="16" y="388" width="343" height="45"/>
+                                <color key="backgroundColor" red="0.27464838952349191" green="0.31464330361973347" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="23"/>
+                                <color key="tintColor" red="1" green="0.64747462499999997" blue="0.2580690404" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelPressed:" destination="QEL-Bz-Zo3" eventType="touchUpInside" id="9k4-zb-kG0"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ySm-8d-sYt">
+                                <rect key="frame" x="16" y="240" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Qp6-wE-8Ok"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.4078189854" green="0.62057597799999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mSB-QP-8Fo" firstAttribute="leading" secondItem="dgl-ed-aHN" secondAttribute="leading" constant="16" id="03Y-cc-51z"/>
+                            <constraint firstItem="dgl-ed-aHN" firstAttribute="trailing" secondItem="w6p-1G-b9N" secondAttribute="trailing" constant="16" id="6Ln-Du-IIC"/>
+                            <constraint firstItem="0Ap-Ld-8we" firstAttribute="leading" secondItem="dgl-ed-aHN" secondAttribute="leading" constant="16" id="DX1-Wl-s5z"/>
+                            <constraint firstItem="ySm-8d-sYt" firstAttribute="top" secondItem="0u1-29-Iav" secondAttribute="bottom" constant="20" id="ERA-QK-6ox"/>
+                            <constraint firstItem="dgl-ed-aHN" firstAttribute="trailing" secondItem="u2P-cU-LNN" secondAttribute="trailing" constant="16" id="FQw-a9-rv8"/>
+                            <constraint firstItem="dgl-ed-aHN" firstAttribute="trailing" secondItem="mSB-QP-8Fo" secondAttribute="trailing" constant="16" id="GJ0-Sb-P0j"/>
+                            <constraint firstItem="0u1-29-Iav" firstAttribute="top" secondItem="mSB-QP-8Fo" secondAttribute="bottom" constant="20" id="Ivw-im-Qwb"/>
+                            <constraint firstItem="dgl-ed-aHN" firstAttribute="trailing" secondItem="TuB-Zm-HLQ" secondAttribute="trailing" constant="16" id="KI9-Uw-Bx5"/>
+                            <constraint firstItem="ySm-8d-sYt" firstAttribute="leading" secondItem="dgl-ed-aHN" secondAttribute="leading" constant="16" id="PWE-tK-rvZ"/>
+                            <constraint firstItem="TuB-Zm-HLQ" firstAttribute="leading" secondItem="0u1-29-Iav" secondAttribute="trailing" constant="10" id="QyV-5q-lbk"/>
+                            <constraint firstItem="0Ap-Ld-8we" firstAttribute="top" secondItem="u2P-cU-LNN" secondAttribute="bottom" constant="25" id="Rzc-oZ-B1T"/>
+                            <constraint firstItem="TuB-Zm-HLQ" firstAttribute="top" secondItem="mSB-QP-8Fo" secondAttribute="bottom" constant="20" id="WY4-8A-okM"/>
+                            <constraint firstItem="w6p-1G-b9N" firstAttribute="top" secondItem="dgl-ed-aHN" secondAttribute="top" constant="40" id="Ylj-aK-7wF"/>
+                            <constraint firstItem="u2P-cU-LNN" firstAttribute="leading" secondItem="dgl-ed-aHN" secondAttribute="leading" constant="16" id="Za3-nh-2pt"/>
+                            <constraint firstItem="w6p-1G-b9N" firstAttribute="leading" secondItem="dgl-ed-aHN" secondAttribute="leading" constant="16" id="amm-1J-B71"/>
+                            <constraint firstItem="u2P-cU-LNN" firstAttribute="top" secondItem="ySm-8d-sYt" secondAttribute="bottom" constant="35" id="fo4-ay-tmM"/>
+                            <constraint firstItem="mSB-QP-8Fo" firstAttribute="top" secondItem="w6p-1G-b9N" secondAttribute="bottom" constant="20" id="gWT-Ex-z0D"/>
+                            <constraint firstItem="dgl-ed-aHN" firstAttribute="trailing" secondItem="0Ap-Ld-8we" secondAttribute="trailing" constant="16" id="hxv-Pf-rjf"/>
+                            <constraint firstItem="TuB-Zm-HLQ" firstAttribute="width" secondItem="0u1-29-Iav" secondAttribute="width" id="jWC-D5-OAn"/>
+                            <constraint firstItem="0u1-29-Iav" firstAttribute="leading" secondItem="dgl-ed-aHN" secondAttribute="leading" constant="16" id="r4M-Lh-e79"/>
+                            <constraint firstItem="dgl-ed-aHN" firstAttribute="trailing" secondItem="ySm-8d-sYt" secondAttribute="trailing" constant="16" id="vAk-rj-K8R"/>
+                            <constraint firstItem="TuB-Zm-HLQ" firstAttribute="leading" secondItem="0u1-29-Iav" secondAttribute="trailing" constant="10" id="vZR-uq-I4C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dgl-ed-aHN"/>
+                    </view>
                     <connections>
-                        <segue destination="Ndq-uF-qet" kind="relationship" relationship="rootViewController" id="QaR-WN-TCc"/>
+                        <outlet property="descriptionField" destination="ySm-8d-sYt" id="QRj-QC-eqs"/>
+                        <outlet property="destinationTextField" destination="mSB-QP-8Fo" id="hc0-WR-mv2"/>
+                        <outlet property="endDateField" destination="TuB-Zm-HLQ" id="zW1-6b-AFr"/>
+                        <outlet property="nameTextField" destination="w6p-1G-b9N" id="4C2-j1-FeS"/>
+                        <outlet property="startDateField" destination="0u1-29-Iav" id="x7k-5S-rUH"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l0m-pm-01p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kle-uA-efc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3614" y="-1059"/>
         </scene>
@@ -673,4 +633,7 @@
         <image name="icons8-near-me-24 (1)" width="24" height="24"/>
         <image name="icons8-world-map-32" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="jNa-9Q-aui"/>
+    </inferredMetricsTieBreakers>
 </document>

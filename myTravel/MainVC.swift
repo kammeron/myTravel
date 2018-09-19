@@ -21,6 +21,12 @@ class MainVC: UIViewController {
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let saveContext = (UIApplication.shared.delegate as! AppDelegate).saveContext
     var tableData = [MyTravel]()
+    var nameTemp: String?
+    var destTemp: String?
+    var startTemp: String?
+    var endTemp: String?
+    var descTemp: String?
+    var ipTemp: NSIndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,21 +54,29 @@ class MainVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddTripSegue" {
-            let nav = segue.destination as! UINavigationController
-            let dest = nav.topViewController as! MyTravelViewController
+            let dest = segue.destination as! MyTravelViewController
             dest.delegate = self
+        } else if segue.identifier == "EditTripSegue" {
+            let dest = segue.destination as! MyTravelViewController
+            dest.delegate = self
+            dest.nameCatch = nameTemp!
+            dest.destCatch = destTemp!
+            dest.startCatch = startTemp!
+            dest.endCatch = endTemp!
+            dest.descCatch = descTemp!
+            dest.indexPath = ipTemp!
         } else if segue.identifier == "TripDetailSegue" {
             print(tableData[(sender as AnyObject).row].name!)
             TripPlanShared.shared.trip = tableData[(sender as AnyObject).row]
         }
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        managedObjectContext.delete(tableData[indexPath.row])
-        saveContext()
-        tableData.remove(at: indexPath.row)
-        tableView.reloadData()
-    }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        managedObjectContext.delete(tableData[indexPath.row])
+//        saveContext()
+//        tableData.remove(at: indexPath.row)
+//        tableView.reloadData()
+//    }
     
     func getPlaces() {
         let url = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(thisLatitude),\(thisLongitude)&radius=\(thisRadius)&types=food&name=harbour&key=\(key)")
@@ -104,20 +118,54 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         performSegue(withIdentifier: "TripDetailSegue", sender: indexPath)
     }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            self.managedObjectContext.delete(self.tableData[indexPath.row])
+            self.saveContext()
+            self.tableData.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
+            self.nameTemp = self.tableData[indexPath.row].name
+            self.destTemp = self.tableData[indexPath.row].destination
+            self.startTemp = "\(String(describing: self.tableData[indexPath.row].startDate!))"
+            self.endTemp = "\(String(describing: self.tableData[indexPath.row].endDate!))"
+            self.descTemp = self.tableData[indexPath.row].details
+            self.ipTemp = indexPath as NSIndexPath
+            self.performSegue(withIdentifier: "EditTripSegue", sender: indexPath)
+        }
+        edit.backgroundColor = UIColor.lightGray
+        
+        return [delete, edit]
+    }
+    
 }
 
 extension MainVC: MyTravelDelegate {
-
-    func addMyTravel(_ name: String, _ destination: String, _ startOn: String, _ endOn: String, _ description: String) {
-        let myTravel = NSEntityDescription.insertNewObject(forEntityName: "MyTravel", into: managedObjectContext) as! MyTravel
-        myTravel.name = name
-        myTravel.destination = destination
-        myTravel.startDate = startOn
-        myTravel.endDate = endOn
-        myTravel.details = description
-        tableData.append(myTravel)
-        appDelegate.saveContext()
-        tableView.reloadData()
+    
+    func addMyTravel(_ name: String, _ destination: String, _ startOn: String, _ endOn: String, _ description: String, at indexPath: NSIndexPath?) {
+        if let ip = indexPath {
+            tableData[ip.row].name = name
+            tableData[ip.row].destination = destination
+            tableData[ip.row].startDate = startOn
+            tableData[ip.row].endDate = endOn
+            tableData[ip.row].details = description
+            saveContext()
+            tableView.reloadData()
+        } else {
+            let myTravel = NSEntityDescription.insertNewObject(forEntityName: "MyTravel", into: managedObjectContext) as! MyTravel
+            myTravel.name = name
+            myTravel.destination = destination
+            myTravel.startDate = startOn
+            myTravel.endDate = endOn
+            myTravel.details = description
+            tableData.append(myTravel)
+            saveContext()
+            tableView.reloadData()
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    func cancelModel() {
         dismiss(animated: true, completion: nil)
     }
 }
