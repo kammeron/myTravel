@@ -49,9 +49,13 @@ class MainVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nav = segue.destination as! UINavigationController
-        let dest = nav.topViewController as! MyTravelViewController
-        dest.delegate = self
+        if segue.identifier == "AddTripSegue" {
+            let nav = segue.destination as! UINavigationController
+            let dest = nav.topViewController as! MyTravelViewController
+            dest.delegate = self
+        } else if segue.identifier == "TripDetailSegue" {
+            // Nothing for now
+        }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -98,6 +102,9 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "TripDetailSegue", sender: indexPath)
+    }
     
 }
 
