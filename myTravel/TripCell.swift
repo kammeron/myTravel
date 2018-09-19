@@ -8,9 +8,7 @@
 
 import UIKit
 
-protocol TripCellDelegate {
-    func getDir(_ seq: Int)
-}
+
 
 class TripCell: UITableViewCell {
     

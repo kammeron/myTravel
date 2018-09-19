@@ -391,20 +391,75 @@
             </objects>
             <point key="canvasLocation" x="1671" y="-1059"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Place View Controller-->
         <scene sceneID="iQ8-ie-rbM">
             <objects>
-                <viewController id="bsV-y3-dHJ" sceneMemberID="viewController">
+                <viewController id="bsV-y3-dHJ" customClass="AddPlaceViewController" customModule="myTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rxb-0C-kFe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Hn-zT-xvD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Place Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t54-Bp-LZz">
+                                <rect key="frame" x="16" y="77" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="KfH-l2-0Ka"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="91k-MM-15Y">
+                                <rect key="frame" x="16" y="141" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nQ4-2g-rYS"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTy-Qr-Wwj">
+                                <rect key="frame" x="16" y="233" width="343" height="48"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="NX2-o7-GHI"/>
+                                </constraints>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addPressed:" destination="bsV-y3-dHJ" eventType="touchUpInside" id="4wH-Nr-SBR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="t54-Bp-LZz" firstAttribute="leading" secondItem="CBL-sE-PXE" secondAttribute="leading" constant="16" id="17g-cj-fUs"/>
+                            <constraint firstItem="CBL-sE-PXE" firstAttribute="bottom" secondItem="t54-Bp-LZz" secondAttribute="bottom" constant="501" id="KC2-tm-mGL"/>
+                            <constraint firstItem="CBL-sE-PXE" firstAttribute="trailing" secondItem="t54-Bp-LZz" secondAttribute="trailing" constant="16" id="R6n-ql-tmz"/>
+                            <constraint firstItem="CBL-sE-PXE" firstAttribute="trailing" secondItem="91k-MM-15Y" secondAttribute="trailing" constant="16" id="T14-pa-JuA"/>
+                            <constraint firstItem="t54-Bp-LZz" firstAttribute="centerX" secondItem="rxb-0C-kFe" secondAttribute="centerX" id="XhR-HA-c8u"/>
+                            <constraint firstItem="91k-MM-15Y" firstAttribute="leading" secondItem="CBL-sE-PXE" secondAttribute="leading" constant="16" id="aZR-d7-VSo"/>
+                            <constraint firstItem="91k-MM-15Y" firstAttribute="top" secondItem="t54-Bp-LZz" secondAttribute="bottom" constant="24" id="ceP-rY-dgv"/>
+                            <constraint firstItem="CTy-Qr-Wwj" firstAttribute="leading" secondItem="CBL-sE-PXE" secondAttribute="leading" constant="16" id="dWJ-1P-LyL"/>
+                            <constraint firstItem="CTy-Qr-Wwj" firstAttribute="top" secondItem="91k-MM-15Y" secondAttribute="bottom" constant="52" id="lkC-cC-tSv"/>
+                            <constraint firstItem="CBL-sE-PXE" firstAttribute="trailing" secondItem="CTy-Qr-Wwj" secondAttribute="trailing" constant="16" id="mdp-iz-rNL"/>
+                            <constraint firstItem="t54-Bp-LZz" firstAttribute="top" secondItem="5Hn-zT-xvD" secondAttribute="bottom" constant="33" id="n7M-oP-GDI"/>
+                            <constraint firstItem="t54-Bp-LZz" firstAttribute="centerX" secondItem="rxb-0C-kFe" secondAttribute="centerX" id="qUt-e1-D3p"/>
+                            <constraint firstItem="t54-Bp-LZz" firstAttribute="centerX" secondItem="5Hn-zT-xvD" secondAttribute="centerX" id="uVC-5K-WHU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CBL-sE-PXE"/>
                     </view>
+                    <connections>
+                        <outlet property="addressField" destination="91k-MM-15Y" id="ZAn-YG-ge3"/>
+                        <outlet property="placeNameField" destination="t54-Bp-LZz" id="SbA-PW-vJY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDJ-cz-axe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3614" y="-2497"/>
+            <point key="canvasLocation" x="3613.5999999999999" y="-2497.6011994003002"/>
         </scene>
         <!--Single Trip Table View Controller-->
         <scene sceneID="ryW-cX-Jf6">
@@ -457,6 +512,13 @@
                             <outlet property="delegate" destination="Nfc-Jj-xIu" id="sOT-ge-odQ"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="aHl-Rr-POw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4BA-aX-eUm">
+                            <connections>
+                                <segue destination="bsV-y3-dHJ" kind="show" id="l67-bR-Fh4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="RWr-iP-9yl" kind="presentation" id="44C-EZ-4ae"/>
                     </connections>

@@ -30,7 +30,7 @@ class MainVC: UIViewController {
 //        getPlaces()
         // Do any additional setup after loading the view, typically from a nib.
         fetchAll()
-        print(tableData)
+        print(tableData[0].spots?.count)
     }
     
     func fetchAll() {
@@ -54,7 +54,8 @@ class MainVC: UIViewController {
             let dest = nav.topViewController as! MyTravelViewController
             dest.delegate = self
         } else if segue.identifier == "TripDetailSegue" {
-            // Nothing for now
+            print(tableData[(sender as AnyObject).row].name!)
+            TripPlanShared.shared.trip = tableData[(sender as AnyObject).row]
         }
     }
     
