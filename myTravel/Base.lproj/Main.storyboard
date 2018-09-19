@@ -167,7 +167,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="OUf-tX-ijm" id="qKT-TR-CsA"/>
-                        <segue destination="Nfc-Jj-xIu" kind="show" id="96E-wK-98T"/>
+                        <segue destination="Nfc-Jj-xIu" kind="show" identifier="TripDetailSegue" id="96E-wK-98T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7e-ZY-38F" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -353,22 +353,65 @@
             </objects>
             <point key="canvasLocation" x="1671" y="-1059"/>
         </scene>
-        <!--Table View Controller-->
+        <!--View Controller-->
+        <scene sceneID="iQ8-ie-rbM">
+            <objects>
+                <viewController id="bsV-y3-dHJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rxb-0C-kFe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="CBL-sE-PXE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gDJ-cz-axe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3614" y="-2497"/>
+        </scene>
+        <!--Single Trip Table View Controller-->
         <scene sceneID="ryW-cX-Jf6">
             <objects>
-                <tableViewController id="Nfc-Jj-xIu" sceneMemberID="viewController">
+                <tableViewController id="Nfc-Jj-xIu" customClass="SingleTripTableViewController" customModule="myTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="oTn-CP-btD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="vFH-G8-4m9">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TripCell" rowHeight="60" id="vFH-G8-4m9" customClass="TripCell" customModule="myTravel" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vFH-G8-4m9" id="CdF-Ds-yoW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJc-JW-Iyu">
+                                            <rect key="frame" x="16" y="14.5" width="271" height="31"/>
+                                            <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukj-hx-j9C">
+                                            <rect key="frame" x="297" y="15" width="62" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="62" id="bHt-za-K3I"/>
+                                            </constraints>
+                                            <state key="normal" title="Direction"/>
+                                            <connections>
+                                                <action selector="getDirection:" destination="vFH-G8-4m9" eventType="touchUpInside" id="Lyd-It-2IT"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="kJc-JW-Iyu" firstAttribute="centerY" secondItem="CdF-Ds-yoW" secondAttribute="centerY" id="JHB-DZ-nbq"/>
+                                        <constraint firstItem="kJc-JW-Iyu" firstAttribute="leading" secondItem="CdF-Ds-yoW" secondAttribute="leadingMargin" id="UAW-xH-Ieq"/>
+                                        <constraint firstItem="ukj-hx-j9C" firstAttribute="centerY" secondItem="CdF-Ds-yoW" secondAttribute="centerY" id="h7Y-Lq-Srf"/>
+                                        <constraint firstItem="ukj-hx-j9C" firstAttribute="leading" secondItem="kJc-JW-Iyu" secondAttribute="trailing" constant="10" id="pF0-cO-5nS"/>
+                                        <constraint firstItem="ukj-hx-j9C" firstAttribute="trailing" secondItem="CdF-Ds-yoW" secondAttribute="trailingMargin" id="ugH-YL-SWW"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="locationLabel" destination="kJc-JW-Iyu" id="K8y-jy-Qd2"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

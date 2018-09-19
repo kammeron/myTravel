@@ -19,6 +19,8 @@
 		620453BE2151B2C3006EFA4C /* TravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620453BD2151B2C3006EFA4C /* TravelCell.swift */; };
 		62A3EE422151C0F20045ECE9 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A3EE412151C0F20045ECE9 /* MapVC.swift */; };
 		B48EF9552151C57A00E79466 /* RouteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48EF9542151C57A00E79466 /* RouteDetailViewController.swift */; };
+		B48EF9572151CC2A00E79466 /* SingleTripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48EF9562151CC2A00E79466 /* SingleTripTableViewController.swift */; };
+		B48EF9592151CEBD00E79466 /* TripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48EF9582151CEBD00E79466 /* TripCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		620453BD2151B2C3006EFA4C /* TravelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCell.swift; sourceTree = "<group>"; };
 		62A3EE412151C0F20045ECE9 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		B48EF9542151C57A00E79466 /* RouteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailViewController.swift; sourceTree = "<group>"; };
+		B48EF9562151CC2A00E79466 /* SingleTripTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTripTableViewController.swift; sourceTree = "<group>"; };
+		B48EF9582151CEBD00E79466 /* TripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 				3ACC722F215185CD00A9BB24 /* MainVC.swift */,
 				62A3EE412151C0F20045ECE9 /* MapVC.swift */,
 				3ACC7231215185CD00A9BB24 /* Main.storyboard */,
+				B48EF9582151CEBD00E79466 /* TripCell.swift */,
+				B48EF9562151CC2A00E79466 /* SingleTripTableViewController.swift */,
 				B48EF9542151C57A00E79466 /* RouteDetailViewController.swift */,
 				620453BD2151B2C3006EFA4C /* TravelCell.swift */,
 				620453BB2151A494006EFA4C /* MyTravelViewController.swift */,
@@ -285,6 +291,8 @@
 				B48EF9552151C57A00E79466 /* RouteDetailViewController.swift in Sources */,
 				62A3EE422151C0F20045ECE9 /* MapVC.swift in Sources */,
 				620453BC2151A494006EFA4C /* MyTravelViewController.swift in Sources */,
+				B48EF9572151CC2A00E79466 /* SingleTripTableViewController.swift in Sources */,
+				B48EF9592151CEBD00E79466 /* TripCell.swift in Sources */,
 				3ACC722E215185CD00A9BB24 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
