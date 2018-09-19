@@ -68,7 +68,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="M1O-Db-cC7"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="MapView" id="pCp-Vm-D6X"/>
+                    <tabBarItem key="tabBarItem" title="MapView" image="icons8-world-map-32" id="pCp-Vm-D6X"/>
                     <connections>
                         <outlet property="mapView" destination="hgE-zV-oQf" id="O8c-Wu-dH8"/>
                         <outlet property="tableView" destination="ok9-7A-fLu" id="YPj-vz-HNP"/>
@@ -376,7 +376,7 @@
         <scene sceneID="hdI-Wk-4Xw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hjR-0E-IEH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trips" id="0tf-2D-Icf"/>
+                    <tabBarItem key="tabBarItem" title="Trips" image="icons8-beach-32" id="0tf-2D-Icf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Z2j-bk-XYE">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -554,4 +554,8 @@
             <point key="canvasLocation" x="3614" y="-1059"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-beach-32" width="32" height="32"/>
+        <image name="icons8-world-map-32" width="32" height="32"/>
+    </resources>
 </document>

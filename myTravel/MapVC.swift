@@ -75,7 +75,6 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
                             
                             annotation.coordinate = CLLocationCoordinate2DMake(lat as! CLLocationDegrees, lng as! CLLocationDegrees)
                             self.mapView.addAnnotation(annotation)
-                            self.mapView.selectAnnotation(<#T##annotation: MKAnnotation##MKAnnotation#>, animated: <#T##Bool#>)
                         }
                         
                     }
