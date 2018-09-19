@@ -161,7 +161,7 @@
                     <navigationItem key="navigationItem" id="1xg-y8-Q3a">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="BTy-bi-h4t">
                             <connections>
-                                <segue destination="s2c-ee-oPs" kind="presentation" id="PfW-TC-Qyw"/>
+                                <segue destination="s2c-ee-oPs" kind="presentation" identifier="AddTripSegue" id="PfW-TC-Qyw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
