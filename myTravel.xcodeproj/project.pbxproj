@@ -15,6 +15,8 @@
 		3ACC723B215185D400A9BB24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ACC7239215185D400A9BB24 /* LaunchScreen.storyboard */; };
 		3ACC7246215185D500A9BB24 /* myTravelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC7245215185D500A9BB24 /* myTravelTests.swift */; };
 		3ACC7251215185D500A9BB24 /* myTravelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC7250215185D500A9BB24 /* myTravelUITests.swift */; };
+		3AF967D62151D57F00A9EF97 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF967D52151D57F00A9EF97 /* Global.swift */; };
+		3AF967D82151D5A700A9EF97 /* TabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF967D72151D5A700A9EF97 /* TabVC.swift */; };
 		620453BC2151A494006EFA4C /* MyTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620453BB2151A494006EFA4C /* MyTravelViewController.swift */; };
 		620453BE2151B2C3006EFA4C /* TravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620453BD2151B2C3006EFA4C /* TravelCell.swift */; };
 		62A3EE422151C0F20045ECE9 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A3EE412151C0F20045ECE9 /* MapVC.swift */; };
@@ -57,6 +59,8 @@
 		3ACC724C215185D500A9BB24 /* myTravelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myTravelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ACC7250215185D500A9BB24 /* myTravelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myTravelUITests.swift; sourceTree = "<group>"; };
 		3ACC7252215185D500A9BB24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AF967D52151D57F00A9EF97 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		3AF967D72151D5A700A9EF97 /* TabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabVC.swift; sourceTree = "<group>"; };
 		620453BB2151A494006EFA4C /* MyTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTravelViewController.swift; sourceTree = "<group>"; };
 		620453BD2151B2C3006EFA4C /* TravelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCell.swift; sourceTree = "<group>"; };
 		62A3EE412151C0F20045ECE9 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 				3ACC7239215185D400A9BB24 /* LaunchScreen.storyboard */,
 				3ACC723C215185D400A9BB24 /* Info.plist */,
 				3ACC7234215185CD00A9BB24 /* myTravel.xcdatamodeld */,
+				3AF967D52151D57F00A9EF97 /* Global.swift */,
+				3AF967D72151D5A700A9EF97 /* TabVC.swift */,
 			);
 			path = myTravel;
 			sourceTree = "<group>";
@@ -295,12 +301,14 @@
 				3ACC7236215185CD00A9BB24 /* myTravel.xcdatamodeld in Sources */,
 				62A3EE462151EAD20045ECE9 /* TripPlanShared.swift in Sources */,
 				620453BE2151B2C3006EFA4C /* TravelCell.swift in Sources */,
+				3AF967D82151D5A700A9EF97 /* TabVC.swift in Sources */,
 				3ACC7230215185CD00A9BB24 /* MainVC.swift in Sources */,
 				B48EF9552151C57A00E79466 /* RouteDetailViewController.swift in Sources */,
 				62A3EE422151C0F20045ECE9 /* MapVC.swift in Sources */,
 				620453BC2151A494006EFA4C /* MyTravelViewController.swift in Sources */,
 				B48EF9572151CC2A00E79466 /* SingleTripTableViewController.swift in Sources */,
 				B48EF9592151CEBD00E79466 /* TripCell.swift in Sources */,
+				3AF967D62151D57F00A9EF97 /* Global.swift in Sources */,
 				3ACC722E215185CD00A9BB24 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

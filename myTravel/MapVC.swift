@@ -16,44 +16,29 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     let key = "AIzaSyBwiQRbzK3aLVLy34fjHKoEaJxkUhpdvv8"
-    var thisLatitude = "37.375489318087"
-    var thisLongitude = "-121.910261964237"
-    var thisRadius = "5000"
-    let locationManager = CLLocationManager()
-    var myLocation: CLLocationCoordinate2D?
+    var thisLatitude = ""
+    var thisLongitude = ""
+    var thisRadius = "4000"
     var thisType = ""
     var locResults: [NSDictionary] = [NSDictionary]()
+    let span: MKCoordinateSpan = MKCoordinateSpanMake(0.1, 0.1)
+    let annotation = MKPointAnnotation()
+    
+    var selectedAnno: MKPointAnnotation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 100
-        
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-        print("ViewDidLoad: \(thisLatitude)")
-        print("ViewDidLoad: \(thisLongitude)")
+        let region: MKCoordinateRegion = MKCoordinateRegionMake(Global.shared.myLocation!, span)
+        mapView.setRegion(region, animated: true)
+        mapView.showsUserLocation = true
+        thisLatitude = Global.shared.latitude
+        thisLongitude = Global.shared.longitude
         getPlaces()
-        print("after lat: \(thisLatitude)")
-        print("after long: \(thisLatitude)")
         // Do any additional setup after loading the view.
     }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0]
-        myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-        thisLatitude = String(location.coordinate.latitude)
-        thisLongitude = String(location.coordinate.longitude)
-        
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -77,10 +62,21 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
                     
                     let results = jsonResult["results"]
                     self.locResults = results as! [NSDictionary]
-                    print(self.locResults)
                     
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
+                        for i in 0...self.locResults.count - 1 {
+                            let geo = self.locResults[i]["geometry"] as! NSDictionary
+                            let loc = geo["location"] as! NSDictionary
+                            let lat = loc["lat"]
+                            let lng = loc["lng"]
+                            let annotation = MKPointAnnotation()
+                            annotation.title = (self.locResults[i]["name"] as! String)
+                            
+                            annotation.coordinate = CLLocationCoordinate2DMake(lat as! CLLocationDegrees, lng as! CLLocationDegrees)
+                            self.mapView.addAnnotation(annotation)
+                        }
+                        
                     }
                 }
             } catch {
@@ -91,7 +87,11 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         // to run the completion handler. This is async!
         task.resume()
     }
-
+    
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        self.selectedAnno = view.annotation as? MKPointAnnotation
+        print(view)
+    }
 }
 
 extension MapVC: UITableViewDelegate, UITableViewDataSource {

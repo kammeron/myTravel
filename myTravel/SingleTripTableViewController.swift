@@ -46,6 +46,13 @@ class SingleTripTableViewController: UITableViewController {
         cell.locationLabel.text = tableData[indexPath.row].name
         return cell
     }
+    
+    // REMOVE THIS LATER!!!!! DIRECTION SHOULD BE ACCESSED BY THE DIRECTION BUTTON. THIS IS FOR TESTING PURPOSE ONLY
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "RouteSegue", sender: indexPath)
+    }
+    
+    // ----------------------------------------------------
 
 }
 
