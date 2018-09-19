@@ -18,16 +18,22 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
     let key = "AIzaSyBwiQRbzK3aLVLy34fjHKoEaJxkUhpdvv8"
     var thisLatitude = ""
     var thisLongitude = ""
-    var thisRadius = "5000"
+    var thisRadius = "4000"
     var thisType = ""
     var locResults: [NSDictionary] = [NSDictionary]()
+    let span: MKCoordinateSpan = MKCoordinateSpanMake(0.1, 0.1)
+    let annotation = MKPointAnnotation()
+    
+    var selectedAnno: MKPointAnnotation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 100
-        
+        let region: MKCoordinateRegion = MKCoordinateRegionMake(Global.shared.myLocation!, span)
+        mapView.setRegion(region, animated: true)
+        mapView.showsUserLocation = true
         thisLatitude = Global.shared.latitude
         thisLongitude = Global.shared.longitude
         getPlaces()
@@ -56,10 +62,22 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
                     
                     let results = jsonResult["results"]
                     self.locResults = results as! [NSDictionary]
-                    print(self.locResults)
                     
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
+                        for i in 0...self.locResults.count - 1 {
+                            let geo = self.locResults[i]["geometry"] as! NSDictionary
+                            let loc = geo["location"] as! NSDictionary
+                            let lat = loc["lat"]
+                            let lng = loc["lng"]
+                            let annotation = MKPointAnnotation()
+                            annotation.title = (self.locResults[i]["name"] as! String)
+                            
+                            annotation.coordinate = CLLocationCoordinate2DMake(lat as! CLLocationDegrees, lng as! CLLocationDegrees)
+                            self.mapView.addAnnotation(annotation)
+                            self.mapView.selectAnnotation(<#T##annotation: MKAnnotation##MKAnnotation#>, animated: <#T##Bool#>)
+                        }
+                        
                     }
                 }
             } catch {
@@ -70,7 +88,11 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         // to run the completion handler. This is async!
         task.resume()
     }
-
+    
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        self.selectedAnno = view.annotation as? MKPointAnnotation
+        print(view)
+    }
 }
 
 extension MapVC: UITableViewDelegate, UITableViewDataSource {
