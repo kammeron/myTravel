@@ -26,7 +26,7 @@ class MainVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight=150.0
+        tableView.rowHeight=170.0
 //        getPlaces()
         // Do any additional setup after loading the view, typically from a nib.
         fetchAll()

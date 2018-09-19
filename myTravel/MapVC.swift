@@ -104,7 +104,7 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.textLabel?.text = locResults[indexPath.row]["name"] as! String
 //        cell.detailTextLabel?.text = locResults[indexPath.row]["rating"] as! String
-        cell.detailTextLabel?.text = "rating: \(locResults[indexPath.row]["rating"]!)"
+        cell.detailTextLabel?.text = "Rating: \(locResults[indexPath.row]["rating"]!)"
         return cell
     }
 }
