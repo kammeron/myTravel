@@ -69,6 +69,7 @@
 		B48EF9542151C57A00E79466 /* RouteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailViewController.swift; sourceTree = "<group>"; };
 		B48EF9562151CC2A00E79466 /* SingleTripTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTripTableViewController.swift; sourceTree = "<group>"; };
 		B48EF9582151CEBD00E79466 /* TripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCell.swift; sourceTree = "<group>"; };
+		B4FEC02E2152B2560024729A /* myTravel2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myTravel2.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -637,9 +638,10 @@
 		3ACC7234215185CD00A9BB24 /* myTravel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				B4FEC02E2152B2560024729A /* myTravel2.xcdatamodel */,
 				3ACC7235215185CD00A9BB24 /* myTravel.xcdatamodel */,
 			);
-			currentVersion = 3ACC7235215185CD00A9BB24 /* myTravel.xcdatamodel */;
+			currentVersion = B4FEC02E2152B2560024729A /* myTravel2.xcdatamodel */;
 			path = myTravel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

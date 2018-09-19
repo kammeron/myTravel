@@ -23,18 +23,6 @@ class SingleTripTableViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.contentInset = UIEdgeInsets(top: 20,left: 0,bottom: 0,right: 0)
         tableData = TripPlanShared.shared.trip.spots?.allObjects as! [Spots]
-        fetchAll()
-    }
-
-    func fetchAll() {
-        let request:NSFetchRequest = Spots.fetchRequest()
-        do {
-            let result = try managedObjectContext.fetch(request)
-            tableData = result
-            print(tableData)
-        } catch {
-            print("\(error)")
-        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,14 +30,14 @@ class SingleTripTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "RouteSegue"{
+        if segue.identifier == "RouteSegue" {
             print("Prepare Segue: \(tableData[(sender as! IndexPath).row].latitude)")
             let destination = segue.destination as! RouteDetailViewController
             destination.endLoc = CLLocationCoordinate2D.init(latitude: tableData[(sender as! IndexPath).row].latitude, longitude:tableData[(sender as! IndexPath).row].longitude)
             destination.startLoc = CLLocationCoordinate2D.init(latitude: tableData[(sender as! IndexPath).row - 1].latitude, longitude:tableData[(sender as! IndexPath).row - 1].longitude)
             destination.displayStart = "Start Location: \(tableData[(sender as! IndexPath).row - 1].name!)"
             destination.displayDest = "Destination: \(tableData[(sender as! IndexPath).row].name!)"
-        }else if segue.identifier == "AddPlaceSegue"{
+        } else if segue.identifier == "AddPlaceSegue" {
             let destination = segue.destination as! AddPlaceViewController
             destination.delegate = self
         }
@@ -58,6 +46,11 @@ class SingleTripTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TripCell") as! TripCell
         cell.locationLabel.text = tableData[indexPath.row].name
+        if tableData[indexPath.row].completed == true {
+            cell.locationLabel.textColor = UIColor(red: 0.3765, green: 0.9098, blue: 0, alpha: 1.0)
+        } else {
+            cell.locationLabel.textColor = UIColor.white
+        }
         cell.delegate = self
         cell.indexPath = indexPath
         if indexPath.row == 0{
@@ -66,12 +59,15 @@ class SingleTripTableViewController: UITableViewController {
         return cell
     }
     
-    // REMOVE THIS LATER!!!!! DIRECTION SHOULD BE ACCESSED BY THE DIRECTION BUTTON. THIS IS FOR TESTING PURPOSE ONLY
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: "RouteSegue", sender: indexPath)
-//    }
-    
-    // ----------------------------------------------------
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableData[indexPath.row].completed == true {
+            tableData[indexPath.row].completed = false
+        } else {
+            tableData[indexPath.row].completed = true
+        }
+        saveContext()
+        tableView.reloadData()
+    }
 
 }
 
@@ -82,6 +78,7 @@ extension SingleTripTableViewController: AddPlaceDelegate{
         spot.address = address
         spot.latitude = latitude
         spot.longitude = longitude
+        spot.completed = false
         tripSelected = trip
         tripSelected.addToSpots(spot)
         tableData.append(spot)
