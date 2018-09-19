@@ -87,7 +87,6 @@ class MainVC: UIViewController {
 }
 
 extension MainVC: UITableViewDelegate, UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableData.count
     }
@@ -109,7 +108,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension MainVC: MyTravelDelegate {
-    
+
     func addMyTravel(_ name: String, _ destination: String, _ startOn: String, _ endOn: String, _ description: String) {
         let myTravel = NSEntityDescription.insertNewObject(forEntityName: "MyTravel", into: managedObjectContext) as! MyTravel
         myTravel.name = name
