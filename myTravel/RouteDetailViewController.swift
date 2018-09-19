@@ -1,5 +1,5 @@
 //
-//  TripDetailViewController.swift
+//  RouteDetailViewController.swift
 //  myTravel
 //
 //  Created by Tiange Wang on 9/18/18.
