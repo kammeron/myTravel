@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class MainVC: UIViewController{
+class MainVC: UIViewController {
     
     let key = "AIzaSyBwiQRbzK3aLVLy34fjHKoEaJxkUhpdvv8"
     let thisLatitude = "-33.8670522"
@@ -19,6 +19,7 @@ class MainVC: UIViewController{
     @IBOutlet weak var tableView: UITableView!
     let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let saveContext = (UIApplication.shared.delegate as! AppDelegate).saveContext
     var tableData = [MyTravel]()
     
     override func viewDidLoad() {
@@ -32,7 +33,7 @@ class MainVC: UIViewController{
         print(tableData)
     }
     
-    func fetchAll(){
+    func fetchAll() {
         let request:NSFetchRequest = MyTravel.fetchRequest()
         do {
             let result = try managedObjectContext.fetch(request)
@@ -51,6 +52,13 @@ class MainVC: UIViewController{
         let nav = segue.destination as! UINavigationController
         let dest = nav.topViewController as! MyTravelViewController
         dest.delegate = self
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        managedObjectContext.delete(tableData[indexPath.row])
+        saveContext()
+        tableData.remove(at: indexPath.row)
+        tableView.reloadData()
     }
     
     func getPlaces() {
@@ -74,7 +82,8 @@ class MainVC: UIViewController{
 
 }
 
-extension MainVC: UITableViewDelegate, UITableViewDataSource{
+extension MainVC: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableData.count
     }
@@ -83,8 +92,8 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyTravelCell", for: indexPath) as! TravelCell
         cell.travelNameLabel.text = tableData[indexPath.row].name
         cell.destinationLabel.text = tableData[indexPath.row].destination
-        cell.startLabel.text = "\(tableData[indexPath.row].startDate)"
-        cell.endLabel.text = "\(tableData[indexPath.row].endDate)"
+        cell.startLabel.text = "\(String(describing: tableData[indexPath.row].startDate))"
+        cell.endLabel.text = "\(String(describing: tableData[indexPath.row].endDate))"
         cell.descriptionLabel.text = tableData[indexPath.row].details
         return cell
     }
@@ -92,13 +101,14 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource{
     
 }
 
-extension MainVC: MyTravelDelegate{
+extension MainVC: MyTravelDelegate {
+    
     func addMyTravel(_ name: String, _ destination: String, _ startOn: String, _ endOn: String, _ description: String) {
         let myTravel = NSEntityDescription.insertNewObject(forEntityName: "MyTravel", into: managedObjectContext) as! MyTravel
         myTravel.name = name
         myTravel.destination = destination
         myTravel.startDate = startOn
-        myTravel.endDate = endOn)
+        myTravel.endDate = endOn
         myTravel.details = description
         tableData.append(myTravel)
         appDelegate.saveContext()
