@@ -20,6 +20,8 @@
 		620453BC2151A494006EFA4C /* MyTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620453BB2151A494006EFA4C /* MyTravelViewController.swift */; };
 		620453BE2151B2C3006EFA4C /* TravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620453BD2151B2C3006EFA4C /* TravelCell.swift */; };
 		62A3EE422151C0F20045ECE9 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A3EE412151C0F20045ECE9 /* MapVC.swift */; };
+		62A3EE442151DF120045ECE9 /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A3EE432151DF110045ECE9 /* AddPlaceViewController.swift */; };
+		62A3EE462151EAD20045ECE9 /* TripPlanShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A3EE452151EAD20045ECE9 /* TripPlanShared.swift */; };
 		B48EF9552151C57A00E79466 /* RouteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48EF9542151C57A00E79466 /* RouteDetailViewController.swift */; };
 		B48EF9572151CC2A00E79466 /* SingleTripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48EF9562151CC2A00E79466 /* SingleTripTableViewController.swift */; };
 		B48EF9592151CEBD00E79466 /* TripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48EF9582151CEBD00E79466 /* TripCell.swift */; };
@@ -62,6 +64,8 @@
 		620453BB2151A494006EFA4C /* MyTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTravelViewController.swift; sourceTree = "<group>"; };
 		620453BD2151B2C3006EFA4C /* TravelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCell.swift; sourceTree = "<group>"; };
 		62A3EE412151C0F20045ECE9 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		62A3EE432151DF110045ECE9 /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
+		62A3EE452151EAD20045ECE9 /* TripPlanShared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlanShared.swift; sourceTree = "<group>"; };
 		B48EF9542151C57A00E79466 /* RouteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailViewController.swift; sourceTree = "<group>"; };
 		B48EF9562151CC2A00E79466 /* SingleTripTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTripTableViewController.swift; sourceTree = "<group>"; };
 		B48EF9582151CEBD00E79466 /* TripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCell.swift; sourceTree = "<group>"; };
@@ -118,8 +122,10 @@
 			children = (
 				3ACC722D215185CD00A9BB24 /* AppDelegate.swift */,
 				3ACC722F215185CD00A9BB24 /* MainVC.swift */,
+				62A3EE452151EAD20045ECE9 /* TripPlanShared.swift */,
 				62A3EE412151C0F20045ECE9 /* MapVC.swift */,
 				3ACC7231215185CD00A9BB24 /* Main.storyboard */,
+				62A3EE432151DF110045ECE9 /* AddPlaceViewController.swift */,
 				B48EF9582151CEBD00E79466 /* TripCell.swift */,
 				B48EF9562151CC2A00E79466 /* SingleTripTableViewController.swift */,
 				B48EF9542151C57A00E79466 /* RouteDetailViewController.swift */,
@@ -291,7 +297,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62A3EE442151DF120045ECE9 /* AddPlaceViewController.swift in Sources */,
 				3ACC7236215185CD00A9BB24 /* myTravel.xcdatamodeld in Sources */,
+				62A3EE462151EAD20045ECE9 /* TripPlanShared.swift in Sources */,
 				620453BE2151B2C3006EFA4C /* TravelCell.swift in Sources */,
 				3AF967D82151D5A700A9EF97 /* TabVC.swift in Sources */,
 				3ACC7230215185CD00A9BB24 /* MainVC.swift in Sources */,
@@ -475,13 +483,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WZ8QNW4HNE;
+				DEVELOPMENT_TEAM = G4Q6TF39TG;
 				INFOPLIST_FILE = myTravel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kammeron.myTravel;
+				PRODUCT_BUNDLE_IDENTIFIER = tenjupaul.myTravel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -493,13 +501,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WZ8QNW4HNE;
+				DEVELOPMENT_TEAM = G4Q6TF39TG;
 				INFOPLIST_FILE = myTravel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kammeron.myTravel;
+				PRODUCT_BUNDLE_IDENTIFIER = tenjupaul.myTravel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -28,16 +28,14 @@ class MainVC: UIViewController {
         tableView.dataSource = self
         tableView.rowHeight=170.0
 //        getPlaces()
-        // Do any additional setup after loading the view, typically from a nib.
         fetchAll()
-        print(tableData)
     }
     
     func fetchAll() {
         let request:NSFetchRequest = MyTravel.fetchRequest()
         do {
             let result = try managedObjectContext.fetch(request)
-            tableData = result as! [MyTravel]
+            tableData = result
         } catch {
             print("\(error)")
         }
@@ -54,7 +52,8 @@ class MainVC: UIViewController {
             let dest = nav.topViewController as! MyTravelViewController
             dest.delegate = self
         } else if segue.identifier == "TripDetailSegue" {
-            // Nothing for now
+            print(tableData[(sender as AnyObject).row].name!)
+            TripPlanShared.shared.trip = tableData[(sender as AnyObject).row]
         }
     }
     
@@ -95,8 +94,8 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyTravelCell", for: indexPath) as! TravelCell
         cell.travelNameLabel.text = tableData[indexPath.row].name
         cell.destinationLabel.text = tableData[indexPath.row].destination
-        cell.startLabel.text = "\(String(describing: tableData[indexPath.row].startDate))"
-        cell.endLabel.text = "\(String(describing: tableData[indexPath.row].endDate))"
+        cell.startLabel.text = "\(String(describing: tableData[indexPath.row].startDate!))"
+        cell.endLabel.text = "\(String(describing: tableData[indexPath.row].endDate!))"
         cell.descriptionLabel.text = tableData[indexPath.row].details
         return cell
     }

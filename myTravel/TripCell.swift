@@ -8,14 +8,19 @@
 
 import UIKit
 
-protocol TripCellDelegate {
-    func getDir(_ seq: Int)
+protocol TripCellDelegate{
+    func getDirections(_ sender: IndexPath)
 }
 
 class TripCell: UITableViewCell {
     
+    var delegate: TripCellDelegate!
+    var indexPath: IndexPath!
+    
+    @IBOutlet weak var directionButton: UIButton!
     @IBOutlet weak var locationLabel: UILabel!
     @IBAction func getDirection(_ sender: UIButton) {
+        delegate.getDirections(indexPath)
     }
     
 }

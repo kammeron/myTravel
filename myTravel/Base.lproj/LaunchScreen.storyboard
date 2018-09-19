@@ -18,24 +18,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjh-Ko-A5u">
-                                <rect key="frame" x="82" y="304.5" width="211" height="58.5"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="50"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="homepage" translatesAutoresizingMaskIntoConstraints="NO" id="bVX-cV-3Je">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MyTravel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdd-XA-6e5">
+                                <rect key="frame" x="16" y="44" width="343" height="65.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="56"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.48629322185444201" green="0.83605647208121825" blue="0.68770752509934197" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Kjh-Ko-A5u" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="XPo-Jj-3iM"/>
-                            <constraint firstItem="Kjh-Ko-A5u" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="jpA-QS-oo7"/>
+                            <constraint firstItem="sdd-XA-6e5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="DpO-As-ot2"/>
+                            <constraint firstItem="bVX-cV-3Je" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="QGM-Yq-rv8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sdd-XA-6e5" secondAttribute="trailing" constant="16" id="YC7-na-Mlj"/>
+                            <constraint firstItem="bVX-cV-3Je" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZTe-xS-pit"/>
+                            <constraint firstItem="bVX-cV-3Je" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="f4y-RG-1vO"/>
+                            <constraint firstItem="sdd-XA-6e5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="oji-GZ-xq6"/>
+                            <constraint firstItem="bVX-cV-3Je" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="zwf-xv-Z8W"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="homepage" width="736" height="1309"/>
+    </resources>
 </document>

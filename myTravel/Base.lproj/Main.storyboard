@@ -200,7 +200,7 @@
                         <viewLayoutGuide key="safeArea" id="h8p-Wg-98C"/>
                     </view>
                     <navigationItem key="navigationItem" id="1xg-y8-Q3a">
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="BTy-bi-h4t">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BTy-bi-h4t">
                             <connections>
                                 <segue destination="s2c-ee-oPs" kind="presentation" identifier="AddTripSegue" id="PfW-TC-Qyw"/>
                             </connections>
@@ -405,20 +405,98 @@
             </objects>
             <point key="canvasLocation" x="1671" y="-1059"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Place View Controller-->
         <scene sceneID="iQ8-ie-rbM">
             <objects>
-                <viewController id="bsV-y3-dHJ" sceneMemberID="viewController">
+                <viewController id="bsV-y3-dHJ" customClass="AddPlaceViewController" customModule="myTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rxb-0C-kFe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Place Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t54-Bp-LZz">
+                                <rect key="frame" x="16" y="46" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="KfH-l2-0Ka"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="91k-MM-15Y">
+                                <rect key="frame" x="16" y="107" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="41W-op-OFz"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTy-Qr-Wwj">
+                                <rect key="frame" x="16" y="187" width="343" height="48"/>
+                                <color key="backgroundColor" red="1" green="0.87634612153336156" blue="0.1995284021872491" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Kbf-BQ-r1o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="23"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addPressed:" destination="bsV-y3-dHJ" eventType="touchUpInside" id="4wH-Nr-SBR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uH6-7Y-p30">
+                                <rect key="frame" x="16" y="260" width="343" height="48"/>
+                                <color key="backgroundColor" red="1" green="0.48815868712583266" blue="0.11171739779606193" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="23"/>
+                                <color key="tintColor" red="1" green="0.64747462495548513" blue="0.25806904044697543" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelPressed:" destination="bsV-y3-dHJ" eventType="touchUpInside" id="LEM-bx-cn4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.68785135340000003" blue="0.1074621336" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="1" green="0.68785135339542114" blue="0.10746213355923928" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="t54-Bp-LZz" firstAttribute="leading" secondItem="CBL-sE-PXE" secondAttribute="leading" constant="16" id="17g-cj-fUs"/>
+                            <constraint firstItem="CTy-Qr-Wwj" firstAttribute="top" secondItem="91k-MM-15Y" secondAttribute="bottom" constant="40" id="9a2-Z1-tid"/>
+                            <constraint firstItem="CBL-sE-PXE" firstAttribute="bottom" secondItem="uH6-7Y-p30" secondAttribute="bottom" constant="359" id="9vM-DH-7b1"/>
+                            <constraint firstItem="CBL-sE-PXE" firstAttribute="bottom" secondItem="t54-Bp-LZz" secondAttribute="bottom" constant="581" id="KC2-tm-mGL"/>
+                            <constraint firstItem="CBL-sE-PXE" firstAttribute="trailing" secondItem="t54-Bp-LZz" secondAttribute="trailing" constant="16" id="R6n-ql-tmz"/>
+                            <constraint firstItem="uH6-7Y-p30" firstAttribute="trailing" secondItem="91k-MM-15Y" secondAttribute="trailing" id="WGE-Kw-6Dh"/>
+                            <constraint firstItem="t54-Bp-LZz" firstAttribute="centerX" secondItem="rxb-0C-kFe" secondAttribute="centerX" id="XhR-HA-c8u"/>
+                            <constraint firstItem="91k-MM-15Y" firstAttribute="top" secondItem="t54-Bp-LZz" secondAttribute="bottom" constant="21" id="agt-bf-xXJ"/>
+                            <constraint firstItem="91k-MM-15Y" firstAttribute="leading" secondItem="t54-Bp-LZz" secondAttribute="leading" id="emd-xe-obq"/>
+                            <constraint firstItem="uH6-7Y-p30" firstAttribute="top" secondItem="CTy-Qr-Wwj" secondAttribute="bottom" constant="25" id="fqN-VP-g8r"/>
+                            <constraint firstItem="uH6-7Y-p30" firstAttribute="leading" secondItem="91k-MM-15Y" secondAttribute="leading" id="izS-3L-Pgd"/>
+                            <constraint firstItem="91k-MM-15Y" firstAttribute="trailing" secondItem="t54-Bp-LZz" secondAttribute="trailing" id="lrt-Qv-XLl"/>
+                            <constraint firstItem="uH6-7Y-p30" firstAttribute="leading" secondItem="CTy-Qr-Wwj" secondAttribute="leading" id="oWI-JU-V8V"/>
+                            <constraint firstItem="t54-Bp-LZz" firstAttribute="centerX" secondItem="rxb-0C-kFe" secondAttribute="centerX" id="qUt-e1-D3p"/>
+                            <constraint firstItem="uH6-7Y-p30" firstAttribute="trailing" secondItem="CTy-Qr-Wwj" secondAttribute="trailing" id="ssc-jz-6aN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CBL-sE-PXE"/>
                     </view>
+                    <connections>
+                        <outlet property="addressField" destination="91k-MM-15Y" id="ZAn-YG-ge3"/>
+                        <outlet property="placeNameField" destination="t54-Bp-LZz" id="SbA-PW-vJY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDJ-cz-axe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3614" y="-2497"/>
+            <point key="canvasLocation" x="3613.5999999999999" y="-2497.6011994003002"/>
         </scene>
         <!--Single Trip Table View Controller-->
         <scene sceneID="ryW-cX-Jf6">
@@ -469,6 +547,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.28016088419681856" green="0.57523001269035534" blue="0.17958988560899697" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
+                                    <outlet property="directionButton" destination="ukj-hx-j9C" id="LNB-qf-5WM"/>
                                     <outlet property="locationLabel" destination="kJc-JW-Iyu" id="K8y-jy-Qd2"/>
                                 </connections>
                             </tableViewCell>
@@ -478,6 +557,13 @@
                             <outlet property="delegate" destination="Nfc-Jj-xIu" id="sOT-ge-odQ"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="aHl-Rr-POw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4BA-aX-eUm">
+                            <connections>
+                                <segue destination="bsV-y3-dHJ" kind="presentation" identifier="AddPlaceSegue" id="l67-bR-Fh4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="RWr-iP-9yl" kind="presentation" identifier="RouteSegue" id="44C-EZ-4ae"/>
                     </connections>
@@ -554,7 +640,9 @@
                         <viewLayoutGuide key="safeArea" id="DhV-Gi-c3v"/>
                     </view>
                     <connections>
+                        <outlet property="destinationLabel" destination="u0w-qd-naE" id="RZr-pp-E2T"/>
                         <outlet property="mapView" destination="ZKe-JK-rf7" id="Mp3-a9-Gw0"/>
+                        <outlet property="startLocationLabel" destination="enR-Um-ctu" id="Hxy-u8-yKM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9dI-y9-Pqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
