@@ -30,7 +30,6 @@ class MainVC: UIViewController {
 //        getPlaces()
         // Do any additional setup after loading the view, typically from a nib.
         fetchAll()
-        print(tableData[0].spots?.count)
     }
     
     func fetchAll() {

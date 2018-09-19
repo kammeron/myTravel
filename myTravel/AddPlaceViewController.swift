@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 protocol AddPlaceDelegate {
-    func addPlace(_ name: String, _ address: String, _ latitude: String, _ longitude: String, _ trip: MyTravel)
+    func addPlace(_ name: String, _ address: String, _ latitude: Double, _ longitude: Double, _ trip: MyTravel)
 }
 
 class AddPlaceViewController: UIViewController {
@@ -30,12 +30,14 @@ class AddPlaceViewController: UIViewController {
             lat = (placemark?.location?.coordinate.latitude)!
             lon = (placemark?.location?.coordinate.longitude)!
             print("Lat: \(lat), Lon: \(lon)")
-            var latitude = String(lat)
-            var longitude = String(lon)
+            var latitude = lat
+            var longitude = lon
             
             self.delegate.addPlace(self.placeNameField.text!, self.addressField.text!, latitude, longitude, TripPlanShared.shared.trip)
-            self.dismiss(animated: true, completion: nil)
         }
+    }
+    @IBAction func cancelPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

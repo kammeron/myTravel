@@ -12,10 +12,15 @@ import MapKit
 class RouteDetailViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet var mapView: MKMapView!
-    var startLoc = CLLocationCoordinate2D.init(latitude: 37.335480, longitude: -121.893028)
-    var endLoc = CLLocationCoordinate2D.init(latitude: 37.773972, longitude: -122.431297)
+    var startLoc = CLLocationCoordinate2D.init()
+    var endLoc = CLLocationCoordinate2D.init()
     var span = MKCoordinateSpan.init(latitudeDelta: 0.1, longitudeDelta: 0.1)
+    var displayStart = ""
+    var displayDest = ""
     
+    @IBOutlet weak var startLocationLabel: UILabel!
+    
+    @IBOutlet weak var destinationLabel: UILabel!
     @IBAction func goBackBtnPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
@@ -23,6 +28,8 @@ class RouteDetailViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
+        startLocationLabel.text = displayStart
+        destinationLabel.text = displayDest
         showRouteOnMap(startLoc, endLoc)
     }
     
