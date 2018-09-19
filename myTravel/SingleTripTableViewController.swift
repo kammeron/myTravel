@@ -14,7 +14,7 @@ class SingleTripTableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
     
@@ -23,5 +23,12 @@ class SingleTripTableViewController: UITableViewController {
         cell.locationLabel.text = "\(indexPath.row)"
         return cell
     }
+    
+    // REMOVE THIS LATER!!!!! DIRECTION SHOULD BE ACCESSED BY THE DIRECTION BUTTON. THIS IS FOR TESTING PURPOSE ONLY
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "RouteSegue", sender: indexPath)
+    }
+    
+    // ----------------------------------------------------
 
 }
