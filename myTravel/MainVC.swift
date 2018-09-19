@@ -92,8 +92,8 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyTravelCell", for: indexPath) as! TravelCell
         cell.travelNameLabel.text = tableData[indexPath.row].name
         cell.destinationLabel.text = tableData[indexPath.row].destination
-        cell.startLabel.text = "\(String(describing: tableData[indexPath.row].startDate))"
-        cell.endLabel.text = "\(String(describing: tableData[indexPath.row].endDate))"
+        cell.startLabel.text = "\(String(describing: tableData[indexPath.row].startDate!))"
+        cell.endLabel.text = "\(String(describing: tableData[indexPath.row].endDate!))"
         cell.descriptionLabel.text = tableData[indexPath.row].details
         return cell
     }
