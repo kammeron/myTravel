@@ -56,7 +56,7 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
                     
                     let results = jsonResult["results"]
                     self.locResults = results as! [NSDictionary]
-                    print(self.locResults)
+//                    print(self.locResults)
                     
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
