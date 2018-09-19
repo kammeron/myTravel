@@ -22,8 +22,9 @@ class SingleTripTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.contentInset = UIEdgeInsets(top: 20,left: 0,bottom: 0,right: 0)
-        tableData = TripPlanShared.shared.trip.spots?.allObjects as! [Spots]
-        fetchAll()
+        let spot = TripPlanShared.shared.trip.spots?.allObjects as! [Spots]
+        tableData = spot.sorted(by: {$0.created_at?.compare($1.created_at!) == .orderedAscending})
+//        fetchAll()
     }
 
     func fetchAll() {
@@ -82,6 +83,7 @@ extension SingleTripTableViewController: AddPlaceDelegate{
         spot.address = address
         spot.latitude = latitude
         spot.longitude = longitude
+        spot.created_at = Date()
         tripSelected = trip
         tripSelected.addToSpots(spot)
         tableData.append(spot)
